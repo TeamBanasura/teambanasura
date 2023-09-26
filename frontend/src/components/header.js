@@ -17,6 +17,9 @@ const header = () => {
                         <LinkContainer to='/cabs'>
                             <Nav.Link>Cabs</Nav.Link>
                         </LinkContainer>
+                        <LinkContainer to='/user/login'>
+                            <Nav.Link>Log In</Nav.Link>
+                        </LinkContainer>
                         
                     </Nav>
 

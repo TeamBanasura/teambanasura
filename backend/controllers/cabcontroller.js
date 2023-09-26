@@ -2,9 +2,14 @@ import asyncHandler from '../custommiddlewares/asynchandler.js';
 import cabModel from '../models/cabmodel.js';
 
 const getCabs = asyncHandler(async (req,res)=>{
-    console.log('fetching cabs....');
+
     const cabs = await cabModel.find();
-    res.json(cabs);
+    if(cabs){
+        res.set('Access-Control-Allow-Origin', '*');
+        res.json(cabs);
+    }
+    
+    
 });
 
 const getCabById = asyncHandler(async (req,res)=>{

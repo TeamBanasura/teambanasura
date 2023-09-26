@@ -6,6 +6,7 @@ import connectDB from './config/db.js';
 import mongoose from 'mongoose';
 import cabRoutes from './routes/cabroutes.js';
 import userRoutes from './routes/userroutes.js';
+//import { notFound,errorHandler } from './custommiddlewares/errorMiddleware.js';
 
 const port =process.env.PORT;
 const app = express();
@@ -21,9 +22,11 @@ app.get('/',(req,res)=>{
         
 });
 
-app.use('/cabs',cabRoutes);
+//app.use('/cabs',cabRoutes);
 app.use('/user',userRoutes);
 
+// app.use(notFound);
+// app.use(errorHandler);
 
 app.listen(port,()=>{
     connectDB();
